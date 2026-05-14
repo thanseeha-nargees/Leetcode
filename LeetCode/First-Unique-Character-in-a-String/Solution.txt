@@ -1,0 +1,18 @@
+1/**
+2 * @param {string} s
+3 * @return {number}
+4 */
+5
+6var firstUniqChar = function(s) {
+7    let count = {};
+8    for (let char of s) {
+9        count[char] = (count[char] || 0) + 1;
+10    }
+11    for (let i = 0; i < s.length; i++) {
+12        if (count[s[i]] === 1) {
+13            return i;
+14        }
+15    }
+16    return -1;
+17
+18};
